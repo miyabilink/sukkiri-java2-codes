@@ -14,7 +14,7 @@ jobs:
 
       - name: create a ZIP file
         run: ls &&
-          zip release.zip practices/ chap* &&
+          zip -r release.zip practices/ chap* LICENSE.txt README.md &&
           unzip -t release.zip
       - name: Create release
         id: create_release

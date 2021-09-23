@@ -1,11 +1,13 @@
 image: atlassian/default-image:2
 
 pipelines:
-    branches:
-      main:
+    tags:
+      v*:
         - step:
            script:
              - git remote add sync git@github.com:miyabilink/sukkiri-java2-codes.git
+             - git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
+             - git fetch origin
              - git checkout main
              - git pull
              - git merge origin/main
