@@ -13,7 +13,7 @@ jobs:
       - name: create a ZIP file
         run: ls &&
           zip -r sukkiri-java2-codes.zip practices/ chap* LICENSE.txt README.md &&
-          unzip -t release.zip
+          unzip -t sukkiri-java2-codes.zip
       - name: Create Release
         uses: softprops/action-gh-release@v1
         env:
